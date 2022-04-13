@@ -7,6 +7,7 @@ import AppFooter from '@/components/AppFooter.vue';
 </script>
 
 <template>
+  <button v-on:click="goAddProduct">ADD</button>
   <RouterView />
 </template>
 
