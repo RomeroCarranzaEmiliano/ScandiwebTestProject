@@ -48,10 +48,8 @@ export default {
   <body>
   <NavBar pageTitle="Product List" />
   <div class="btn-container">
-    <!-- <Button id="add-btn" content="ADD" v-on:click="goAddProduct"/> -->
-    <!--<Button id="delete-product-btn" class="delete-checkbox" content="MASS DELETE" v-on:click="massDelete" />-->
-    <button v-on:click="goAddProduct">ADD</button>
-    <button v-on:click="massDelete">MASS DELETE</button>
+    <Button id="add-btn" content="ADD" v-on:click="goAddProduct"/>
+    <Button id="delete-product-btn" class="delete-checkbox" content="MASS DELETE" v-on:click="massDelete" />
   </div>
 
   <div class="container">

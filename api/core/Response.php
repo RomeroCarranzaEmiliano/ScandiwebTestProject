@@ -1,5 +1,6 @@
 <?php
 
+namespace api\core;
 class Response
 {
     public function setStatusCode(int $code)

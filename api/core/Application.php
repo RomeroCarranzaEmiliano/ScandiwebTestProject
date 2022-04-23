@@ -1,8 +1,10 @@
 <?php
 
-require_once __DIR__."/Request.php";
-require_once __DIR__."/Router.php";
-require_once __DIR__."/Response.php";
+namespace api\core;
+
+require_once "api\core\Request.php";
+require_once "api\core\Router.php";
+require_once "api\core\Response.php";
 
 class Application
 {
@@ -14,6 +16,7 @@ class Application
     public function __construct($rootPath)
     {
         self::$ROOT_DIR = $rootPath;
+
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);

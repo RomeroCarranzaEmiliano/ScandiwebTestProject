@@ -1,5 +1,7 @@
 <?php
 
+namespace api\core;
+
 class Request
 {
     public function getPath()
@@ -16,4 +18,5 @@ class Request
     {
         return strtolower($_SERVER["REQUEST_METHOD"]);
     }
+
 }
