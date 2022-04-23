@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p id="footerTitle">Scandiweb Test assigment</p>
+    <p id="footerTitle">Scandiweb Test assignment</p>
   </footer>
 </template>
 
