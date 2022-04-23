@@ -1,5 +1,5 @@
 <template>
-  <div role="button" aria-pressed="false" tabindex="0" class="btn" id="save-btn">{{ content }}</div>
+  <div role="button" aria-pressed="false" tabindex="0" class="btn">{{ content }}</div>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
 
   <div class="product-box" v-on:click="checked=!checked;" v-bind:aria-selected="checked">
-    <input type="checkbox" class="product-check-box" v-bind:checked="checked">
+    <input type="checkbox" class="delete-checkbox" v-bind:checked="checked">
       <br>
     <div id="product-text">
     <div class="product-sku">{{ sku }}</div>
@@ -91,7 +91,7 @@ export default {
     box-shadow: 0 10px 6px -6px #777;
   }
 
-  .product-check-box {
+  .delete-checkbox {
     position: absolute;
     float: left;
     margin-left: -45%;

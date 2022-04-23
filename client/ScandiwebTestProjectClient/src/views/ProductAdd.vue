@@ -167,8 +167,8 @@ export default {
     <Button v-on:click="goHome" content="Cancel" />
   </div>
 
-  <div class="container">
-    <div id="product_form">
+  <form class="container" id="product_form">
+    <div id="simple-form">
       <div class="container-inp">
         <div class="sub-container-inp">
           <input class="inp" id="sku" v-model="productSku" placeholder="SKU">
@@ -204,7 +204,7 @@ export default {
       </div>
     </div>
 
-    <form id="form_extend">
+    <div id="extended-form">
 
       <div id="dvd-form" v-if="selected=='DVD'">
         <div class="container-inp">
@@ -259,8 +259,8 @@ export default {
         </div>
       </div>
 
-    </form>
-  </div>
+    </div>
+  </form>
 
 
   <AppFooter />
@@ -362,7 +362,7 @@ select > option {
   padding: 4pt;
 }
 
-#product_form {
+#simple-form {
   position: relative;
   float: left;
 
@@ -374,7 +374,7 @@ select > option {
 
 }
 
-#form_extend {
+#extended-form {
   position: relative;
   float: left;
 
@@ -402,10 +402,10 @@ select > option {
     width: 300pt;
   }
 
-  #product_form {
+  #simple-form {
     width: 100%;
   }
-  #form_extend {
+  #extended-form {
     width: 100%;
     margin-top: 10pt;
   }
