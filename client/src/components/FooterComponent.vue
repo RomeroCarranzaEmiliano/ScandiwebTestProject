@@ -1,16 +1,17 @@
 <template>
   <footer>
-    <p id="footerTitle">Scandiweb Test assignment</p>
+    <p id="footer-title">Scandiweb Test assignment</p>
   </footer>
 </template>
 
 <script>
 export default {
-  name: "AppFooter"
+  name: "FooterComponent"
 }
 </script>
 
 <style scoped>
+
   footer {
     position: fixed;
     bottom: 0;
@@ -22,13 +23,14 @@ export default {
     width: 100vw;
 
     text-align: center;
-    font-family: Raleway;
+
     font-size: 2.5vh;
     color: rgb(235, 235, 250)
   }
 
-  #footerTitle {
+  #footer-title {
     position: relative;
     bottom: 2%;
   }
+
 </style>

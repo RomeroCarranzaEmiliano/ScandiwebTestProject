@@ -8,12 +8,19 @@ class Furniture extends Product
     private float $width;
     private float $length;
 
-    public function __construct($id, $sku, $name, $price, $height, $width, $length)
+    public function __construct(array $params)
     {
-        $this->height = $height;
-        $this->width = $width;
-        $this->length = $length;
-        parent::__construct($id, $sku, $name, $price);
+        $this->height = $params["height"];
+        $this->width = $params["width"];
+        $this->length = $params["length"];
+
+        $typeRules = array(
+            "height" => ["required", "measurement"],
+            "width" => ["required", "measurement"],
+            "length" => ["required", "measurement"]
+        );
+
+        parent::__construct($params["id"], $params["sku"], $params["name"], $params["price"], $typeRules);
     }
 
     public function asDict(): array

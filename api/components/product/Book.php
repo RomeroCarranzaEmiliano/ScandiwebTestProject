@@ -6,10 +6,14 @@ class Book extends Product
 {
     private float $weight;
 
-    public function __construct($id, $sku, $name, $price, $weight)
+    public function __construct(array $params)
     {
-        $this->weight = $weight;
-        parent::__construct($id, $sku, $name, $price);
+        $this->weight = $params["weight"];
+        $typeRules = array(
+            "weight" => ["required", "measurement"]
+        );
+
+        parent::__construct($params["id"], $params["sku"], $params["name"], $params["price"], $typeRules);
     }
 
     public function asDict(): array

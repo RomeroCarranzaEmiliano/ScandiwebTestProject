@@ -7,13 +7,37 @@ abstract class Product
     private string $sku;
     private string $name;
     private float $price;
+    private readonly array $rules;
 
-    public function __construct($id, $sku, $name, $price)
+    public function __construct($id, $sku, $name, $price, $rules)
     {
         $this->id = $id;
         $this->sku = $sku;
         $this->name = $name;
         $this->price = $price;
+
+        $finalRules = array(
+            "sku" => ["required", "stringNonEmpty", "noSpacesString"],
+            "name" => ["required", "stringNonEmpty"],
+            "price" => ["required", "price"],
+
+            "size" => ["integer"],
+
+            "height" => ["measurement"],
+            "width" => ["measurement"],
+            "length" => ["measurement"],
+
+            "weight" => ["measurement"]
+        );
+        foreach ($rules as $key => $value) {
+            $finalRules[$key] = $value;
+        }
+
+        $this->rules = $finalRules;
+    }
+
+    public function getRules(): array {
+        return $this->rules;
     }
 
     public abstract function asDict(): array;

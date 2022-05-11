@@ -5,6 +5,16 @@ use api\core\Response;
 require_once "api\core\Response.php";
 class ProductQueries
 {
+    private readonly array $dict;
+
+    public function __construct() {
+        $aux = array(
+            "DVD" => $this->insertDVD(),
+            "Book" => $this->insertBook(),
+            "Furniture" => $this->insertFurniture()
+        );
+        $this->dict = $aux;
+    }
 
     public function selectAll(): string
     {
@@ -14,12 +24,8 @@ class ProductQueries
 
     public function insert($type)
     {
-        if ($type == "DVD") {
-            return $this->insertDVD();
-        } else if ($type == "Furniture") {
-            return $this->insertFurniture();
-        } else if ($type == "Book") {
-            return $this->insertBook();
+        if (array_key_exists($type, $this->dict)) {
+            return $this->dict[$type];
         } else {
             $response = new Response();
             $response->setStatusCode(500);

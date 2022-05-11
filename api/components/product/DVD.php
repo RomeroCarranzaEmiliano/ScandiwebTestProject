@@ -6,10 +6,15 @@ class DVD extends Product
 {
     private int $size;
 
-    public function __construct($id, $sku, $name, $price, $size)
+    public function __construct(array $params)
     {
-        $this->size = $size;
-        parent::__construct($id, $sku, $name, $price);
+        $this->size = $params["size"];
+
+        $typeRules = array(
+            "size" => ["required", "integer"]
+        );
+
+        parent::__construct($params["id"] ?? null, $params["sku"], $params["name"], $params["price"], $typeRules);
     }
 
     public function asDict(): array
