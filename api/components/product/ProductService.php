@@ -23,7 +23,6 @@ class ProductService
     // PUT
     public function add($body)
     {
-        // Remove non-used attributes
         $body = json_decode($body, true);
 
         if ($body == null) {

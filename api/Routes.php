@@ -6,9 +6,6 @@ require_once "components\product\ProductRoutes.php";
 
 class Routes
 {
-
-    public array $dict;
-
     private array $components;
     private ProductRoutes $product;
 

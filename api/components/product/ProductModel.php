@@ -83,7 +83,6 @@ class ProductModel
 
     public function delete($idList)
     {
-
         $query = $this->queries->delete();
         $inQuery = "";
         $params = array();
@@ -105,11 +104,6 @@ class ProductModel
 
     private function validate($params): bool|Product
     {
-        /*
-         * Returns false if the data doesn't pass the validations, or the correct object according to the
-         * data received.
-         */
-
         $rules = $this->factory->getRules($params);
         $valid = $this->validator->validate($params, $rules);
 
