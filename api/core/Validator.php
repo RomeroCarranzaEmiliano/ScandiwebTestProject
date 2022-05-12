@@ -10,7 +10,7 @@ class Validator
     public function __construct()
     {
         $this->rules = array(
-            "required" => function($field) { return true; },
+            "required" => function($field) { return $this->requiredVal($field); },
             "stringNonEmpty" => function ($field) { return $this->stringNonEmptyVal($field); },
             "noSpacesString" => function ($field) { return $this->noSpacesStringVal($field); },
             "price" => function ($field) { return $this->priceVal($field); },
@@ -29,7 +29,6 @@ class Validator
 
     public function validate($data, $attributes): bool
     {
-
         $err = array();
         foreach ($attributes as $key => $value) {
             $err[$key] = "";
@@ -42,6 +41,8 @@ class Validator
             }
 
         }
+
+        //var_dump($err);
 
         $resultAsStr = implode('', $err);
         if ($resultAsStr == "") {
@@ -63,6 +64,17 @@ class Validator
         }
 
         return $err;
+    }
+
+    private function requiredVal($field): bool
+    {
+        $valid = false;
+
+        if ($field != null and $field != "") {
+            $valid = true;
+        }
+
+        return $valid;
     }
 
     private function integerVal($field): bool

@@ -33,9 +33,9 @@ class ProductModel
         $this->validator = new Validator();
 
         $this->factory = new ProductFactory(array(
-            "DVD" => function($params) { return new DVD($params); },
-            "Furniture" => function($params) { return new Furniture($params); },
-            "Book" => function($params) { return new Book($params); }
+            "DVD" => DVD::class,
+            "Furniture" => Furniture::class,
+            "Book" => Book::class
         ));
 
 
@@ -58,8 +58,8 @@ class ProductModel
 
     public function addProduct($dict): Response|string
     {
-
         $product = $this->validate($dict);
+
         $response = new Response();
         if ($product == false) {
             $response->setStatusCode(400);
@@ -110,18 +110,14 @@ class ProductModel
          * data received.
          */
 
-        $product = $this->factory->newProduct($params);
-        if ($product == false) {
-            return false;
-        }
-
-        $valid = $this->validator->validate($params, $product->getRules());
+        $rules = $this->factory->getRules($params);
+        $valid = $this->validator->validate($params, $rules);
 
         if ($valid == false) {
             return false;
         }
 
-        return $product;
+        return $this->factory->newProduct($params);
     }
 
 

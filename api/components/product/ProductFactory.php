@@ -19,14 +19,21 @@ class ProductFactory
         $this->dict = $objectList;
     }
 
+    public function getRules($params) {
+        if (array_key_exists("type", $params)) {
+            return $this->dict[$params["type"]]::listRules();
+        }
+
+        return false;
+    }
+
     public function newProduct($params)
     {
         if (array_key_exists("type", $params)) {
-            return $this->dict[$params["type"]]($params);
-        } else {
-            return false;
+            return new $this->dict[$params["type"]]($params);
         }
 
+        return false;
     }
 
 }

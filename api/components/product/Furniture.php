@@ -7,6 +7,11 @@ class Furniture extends Product
     private float $height;
     private float $width;
     private float $length;
+    private static array $rules = array(
+        "height" => ["required", "measurement"],
+        "width" => ["required", "measurement"],
+        "length" => ["required", "measurement"]
+    );
 
     public function __construct(array $params)
     {
@@ -14,13 +19,20 @@ class Furniture extends Product
         $this->width = $params["width"];
         $this->length = $params["length"];
 
-        $typeRules = array(
-            "height" => ["required", "measurement"],
-            "width" => ["required", "measurement"],
-            "length" => ["required", "measurement"]
-        );
+        parent::__construct($params["id"] ?? null, $params["sku"], $params["name"], $params["price"]);
+    }
 
-        parent::__construct($params["id"], $params["sku"], $params["name"], $params["price"], $typeRules);
+    public static function listRules(): array
+    {
+        $rules = array();
+        foreach (Furniture::$rules as $key => $value) {
+            $rules[$key] = $value;
+        }
+        foreach (parent::getRules() as $key => $value) {
+            $rules[$key] = $value;
+        }
+
+        return $rules;
     }
 
     public function asDict(): array

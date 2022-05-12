@@ -5,16 +5,28 @@ require_once  "components\product\Product.php";
 class DVD extends Product
 {
     private int $size;
+    private static array $rules = array(
+        "size" => ["required", "integer"]
+    );
 
     public function __construct(array $params)
     {
         $this->size = $params["size"];
 
-        $typeRules = array(
-            "size" => ["required", "integer"]
-        );
+        parent::__construct($params["id"] ?? null, $params["sku"], $params["name"], $params["price"]);
+    }
 
-        parent::__construct($params["id"] ?? null, $params["sku"], $params["name"], $params["price"], $typeRules);
+    public static function listRules(): array
+    {
+        $rules = array();
+        foreach (DVD::$rules as $key => $value) {
+            $rules[$key] = $value;
+        }
+        foreach (parent::getRules() as $key => $value) {
+            $rules[$key] = $value;
+        }
+
+        return $rules;
     }
 
     public function asDict(): array

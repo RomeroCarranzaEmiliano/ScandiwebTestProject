@@ -5,15 +5,28 @@ require_once  "components\product\Product.php";
 class Book extends Product
 {
     private float $weight;
+    private static array $rules = array(
+        "weight" => ["required", "measurement"]
+    );
 
     public function __construct(array $params)
     {
         $this->weight = $params["weight"];
-        $typeRules = array(
-            "weight" => ["required", "measurement"]
-        );
 
-        parent::__construct($params["id"], $params["sku"], $params["name"], $params["price"], $typeRules);
+        parent::__construct($params["id"] ?? null, $params["sku"], $params["name"], $params["price"]);
+    }
+
+    public static function listRules(): array
+    {
+        $rules = array();
+        foreach (Book::$rules as $key => $value) {
+            $rules[$key] = $value;
+        }
+        foreach (parent::getRules() as $key => $value) {
+            $rules[$key] = $value;
+        }
+
+        return $rules;
     }
 
     public function asDict(): array
