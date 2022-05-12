@@ -3,7 +3,9 @@
   <navbar-component title="Product List"></navbar-component>
   <div id="opt">
     <router-link to="/add-product"><button class="btn">ADD</button></router-link>
-    <router-link to="" v-on:click="massDelete"><button class="btn">MASS DELETE</button></router-link>
+    <router-link to="" v-on:click="massDelete">
+      <button class="btn" id="delete-product-btn">MASS DELETE</button>
+    </router-link>
   </div>
 
   <div id="product-container">
