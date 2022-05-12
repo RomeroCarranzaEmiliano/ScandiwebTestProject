@@ -1,7 +1,7 @@
 <?php
 
-use api\core\Application;
-require_once "api/core/Application.php";
+use core\Application;
+require_once "core/Application.php";
 
 // Allow from any origin
 if (isset($_SERVER['HTTP_ORIGIN'])) {

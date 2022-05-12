@@ -1,8 +1,8 @@
 <?php
-namespace api\components\product;
-use api\core\Response;
+namespace components\product;
+use core\Response;
 
-require_once "api\core\Response.php";
+require_once "core\Response.php";
 class ProductQueries
 {
     private readonly array $dict;

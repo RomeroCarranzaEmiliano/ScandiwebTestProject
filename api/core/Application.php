@@ -1,10 +1,10 @@
 <?php
 
-namespace api\core;
+namespace core;
 
-require_once "api\core\Request.php";
-require_once "api\core\Router.php";
-require_once "api\core\Response.php";
+require_once "core\Request.php";
+require_once "core\Router.php";
+require_once "core\Response.php";
 
 class Application
 {

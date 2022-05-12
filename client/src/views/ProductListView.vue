@@ -32,7 +32,7 @@ export default {
   },
   mounted () {
     axios
-        .get("http://localhost:80/product/product-list")
+        .get("http://localhost:3000/product/product-list")
         .then(response => (this.products = JSON.parse(response.data)))
         .catch(error => console.log(error.message))
   },
@@ -50,7 +50,7 @@ export default {
     },
     massDelete () {
       axios
-          .delete("http://localhost:80/product/mass-delete", {data: {productList: this.productList}})
+          .delete("http://localhost:3000/product/mass-delete", {data: {productList: this.productList}})
           .then(() => window.location.href = "/")
           .catch(error => this.err = error.message)
     }

@@ -1,7 +1,7 @@
 <?php
-namespace api\componets\product;
+namespace components\product;
 
-require_once  "api\components\product\Product.php";
+require_once  "components\product\Product.php";
 class Furniture extends Product
 {
     private float $height;

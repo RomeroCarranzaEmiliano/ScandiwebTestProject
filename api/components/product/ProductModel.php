@@ -1,22 +1,22 @@
 <?php
-use api\componets\product\Product;
-use api\componets\product\DVD;
-use api\componets\product\Furniture;
-use api\componets\product\Book;
-use api\components\product\ProductQueries;
-use api\components\product\ProductFactory;
-use api\core\Database;
-use api\core\Validator;
-use api\core\Response;
+use components\product\Product;
+use components\product\DVD;
+use components\product\Furniture;
+use components\product\Book;
+use components\product\ProductQueries;
+use components\product\ProductFactory;
+use core\Database;
+use core\Validator;
+use core\Response;
 
-require_once "api\core\Database.php";
-require_once "api\components\product\ProductQueries.php";
-require_once "api\components\product\ProductFactory.php";
-require_once "api\components\product\DVD.php";
-require_once "api\components\product\Furniture.php";
-require_once "api\components\product\Book.php";
-require_once "api\core\Validator.php";
-require_once "api\core\Response.php";
+require_once "core\Database.php";
+require_once "components\product\ProductQueries.php";
+require_once "components\product\ProductFactory.php";
+require_once "components\product\DVD.php";
+require_once "components\product\Furniture.php";
+require_once "components\product\Book.php";
+require_once "core\Validator.php";
+require_once "core\Response.php";
 
 
 class ProductModel

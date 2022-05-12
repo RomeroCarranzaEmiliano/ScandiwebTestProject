@@ -1,5 +1,5 @@
 <?php
-namespace api\componets\product;
+namespace components\product;
 
 abstract class Product
 {

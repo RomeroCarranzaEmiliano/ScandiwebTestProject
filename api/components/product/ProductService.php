@@ -1,9 +1,9 @@
 <?php
-namespace api\components\product;
+namespace components\product;
 
 use ProductModel;
 
-require_once "api\components\product\ProductModel.php";
+require_once "components\product\ProductModel.php";
 class ProductService
 {
     private ProductModel $productModel;

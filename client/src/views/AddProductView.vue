@@ -144,7 +144,7 @@ export default {
     submit: function () {
       this.validateForm();
 
-      axios.post("http://localhost:80/product/add-product", this.productData)
+      axios.post("http://localhost:3000/product/add-product", this.productData)
           .then((response) => {
             if (response.data) {
               window.location.href = "/";

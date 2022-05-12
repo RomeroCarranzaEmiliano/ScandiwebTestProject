@@ -1,9 +1,8 @@
 <?php
-namespace api;
 
-use api\components\product\ProductRoutes;
+use components\product\ProductRoutes;
 
-require_once "api\components\product\ProductRoutes.php";
+require_once "components\product\ProductRoutes.php";
 
 class Routes
 {

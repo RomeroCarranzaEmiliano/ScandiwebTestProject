@@ -1,6 +1,6 @@
 <?php
 
-namespace api\components\product;
+namespace components\product;
 
 use http\Exception\RuntimeException;
 use mysql_xdevapi\Exception;

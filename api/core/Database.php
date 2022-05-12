@@ -1,6 +1,6 @@
 <?php
 
-namespace api\core;
+namespace core;
 
 use PDO;
 

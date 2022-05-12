@@ -1,9 +1,9 @@
 <?php
 
-namespace api\core;
+namespace core;
 
-use api\Routes;
-require_once "api\Routes.php";
+use Routes;
+require_once "Routes.php";
 
 class Router
 {
