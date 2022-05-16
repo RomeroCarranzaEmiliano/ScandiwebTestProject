@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import {createWebHistory, createRouter, createWebHashHistory, createMemoryHistory} from "vue-router";
 
 import ProductListView from "@/views/ProductListView";
 import FooterComponent from "@/components/FooterComponent";

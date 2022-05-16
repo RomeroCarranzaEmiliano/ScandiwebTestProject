@@ -114,7 +114,7 @@ class Validator
     {
         $valid = false;
 
-        if (preg_match("/\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})/", $field)) {
+        if (preg_match("/^\d+(\.\d{2})?$/", $field)) {
             $valid = true;
         }
 
