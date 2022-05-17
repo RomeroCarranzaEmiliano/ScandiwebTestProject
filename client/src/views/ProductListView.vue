@@ -34,7 +34,7 @@ export default {
   },
   mounted () {
     axios
-        .get("http://localhost:3000/product/product-list")
+        .get("https://192.236.162.91/api/product/product-list")
         .then(response => (this.products = JSON.parse(response.data)))
         .catch(error => console.log(error.message))
   },
@@ -52,7 +52,7 @@ export default {
     },
     massDelete () {
       axios
-          .delete("http://localhost:3000/product/mass-delete", {data: {productList: this.productList}})
+          .delete("https://192.236.162.91/api/product/mass-delete", {data: {productList: this.productList}})
           .then(() => window.location.href = "/")
           .catch(error => this.err = error.message)
     }
