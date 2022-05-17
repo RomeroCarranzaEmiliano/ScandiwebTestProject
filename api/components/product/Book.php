@@ -1,7 +1,7 @@
 <?php
 namespace components\product;
 
-require_once  "components\product\Product.php";
+require_once  __DIR__."/Product.php";
 class Book extends Product
 {
     private float $weight;

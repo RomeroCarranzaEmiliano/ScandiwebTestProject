@@ -1,7 +1,7 @@
 <?php
 namespace components\product;
 
-require_once  "components\product\Product.php";
+require_once  __DIR__."/Product.php";
 class DVD extends Product
 {
     private int $size;

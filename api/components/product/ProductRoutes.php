@@ -1,7 +1,7 @@
 <?php
 namespace components\product;
 
-require_once "components\product\ProductService.php";
+require_once __DIR__."/ProductService.php";
 
 class ProductRoutes
 {

@@ -3,7 +3,7 @@
 namespace core;
 
 use Routes;
-require_once "Routes.php";
+require_once __DIR__."/../Routes.php";
 
 class Router
 {

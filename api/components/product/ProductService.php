@@ -3,7 +3,7 @@ namespace components\product;
 
 use ProductModel;
 
-require_once "components\product\ProductModel.php";
+require_once __DIR__."/ProductModel.php";
 class ProductService
 {
     private ProductModel $productModel;

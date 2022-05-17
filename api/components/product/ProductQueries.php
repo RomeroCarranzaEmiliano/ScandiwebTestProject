@@ -2,7 +2,7 @@
 namespace components\product;
 use core\Response;
 
-require_once "core\Response.php";
+require_once __DIR__."/../../core/Response.php";
 class ProductQueries
 {
     private readonly array $dict;

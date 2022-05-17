@@ -2,7 +2,7 @@
 
 use components\product\ProductRoutes;
 
-require_once "components\product\ProductRoutes.php";
+require_once __DIR__."/components/product/ProductRoutes.php";
 
 class Routes
 {

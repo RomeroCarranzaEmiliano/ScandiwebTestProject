@@ -9,14 +9,14 @@ use core\Database;
 use core\Validator;
 use core\Response;
 
-require_once "core\Database.php";
-require_once "components\product\ProductQueries.php";
-require_once "components\product\ProductFactory.php";
-require_once "components\product\DVD.php";
-require_once "components\product\Furniture.php";
-require_once "components\product\Book.php";
-require_once "core\Validator.php";
-require_once "core\Response.php";
+require_once __DIR__."/../../core/Database.php";
+require_once __DIR__."/ProductQueries.php";
+require_once __DIR__."/ProductFactory.php";
+require_once __DIR__."/DVD.php";
+require_once __DIR__."/Furniture.php";
+require_once __DIR__."/Book.php";
+require_once __DIR__."/../../core/Validator.php";
+require_once __DIR__."/../../core/Response.php";
 
 
 class ProductModel

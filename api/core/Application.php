@@ -2,9 +2,9 @@
 
 namespace core;
 
-require_once "core\Request.php";
-require_once "core\Router.php";
-require_once "core\Response.php";
+require_once __DIR__."/Request.php";
+require_once __DIR__."/Router.php";
+require_once __DIR__."/Response.php";
 
 class Application
 {
