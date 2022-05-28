@@ -26,6 +26,7 @@ class ProductService
         $body = json_decode($body, true);
 
         if ($body == null) {
+            http_response_code(500);
             return false;
         }
 

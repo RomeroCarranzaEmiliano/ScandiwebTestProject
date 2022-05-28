@@ -158,7 +158,7 @@ export default {
       if (this.productSku.length === 0) {
         this.skuErr = "Please submit required SKU data";
       } else if (!(/^\S+$/.test(this.productSku))) {
-        this.skuErr = "Please submit SKU without spaces"
+        this.skuErr = "Please submit an unique SKU without spaces"
       } else {
         this.skuErr = false;
       }

@@ -32,7 +32,7 @@ class Database
         $conn = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->user, $this->pass);
         $stmt = $conn->prepare($query);
         $stmt->execute($params);
-        $result = $stmt->fetchAll();
+        $result = $stmt;
         $conn = null;
         return $result;
 

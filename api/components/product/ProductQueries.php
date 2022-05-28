@@ -22,6 +22,11 @@ class ProductQueries
 
     }
 
+    public function exists(): string
+    {
+        return 'SELECT EXISTS(SELECT * FROM product WHERE sku = (:sku));';
+    }
+
     public function insert($type)
     {
         if (array_key_exists($type, $this->dict)) {

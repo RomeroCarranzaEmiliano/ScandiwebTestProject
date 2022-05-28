@@ -61,9 +61,9 @@ class ProductModel
         $product = $this->validate($dict);
 
         $response = new Response();
-        if ($product == false) {
+        if (is_bool($product)) {
             $response->setStatusCode(400);
-            return false;
+            return $product;
         }
 
         $params = $product->getParams();
@@ -108,6 +108,18 @@ class ProductModel
         $valid = $this->validator->validate($params, $rules);
 
         if ($valid == false) {
+            return false;
+        }
+
+        $query = $this->queries->exists();
+        try {
+            $result = $this->db->prepareAndExecute($query, array(":sku" => $params["sku"]));
+        } catch (\Throwable $t) {
+            return $t->getMessage();
+        }
+
+        if ($result->fetch(PDO::FETCH_NUM)[0] == 1) {
+            http_response_code(500);
             return false;
         }
 
