@@ -56,14 +56,14 @@ class ProductModel
 
     }
 
-    public function addProduct($dict): Response|string
+    public function addProduct($dict): bool|string
     {
         $product = $this->validate($dict);
 
         $response = new Response();
         if (is_bool($product)) {
             $response->setStatusCode(400);
-            return $product;
+            return json_encode(array("skuErr" => true));
         }
 
         $params = $product->getParams();
@@ -119,7 +119,6 @@ class ProductModel
         }
 
         if ($result->fetch(PDO::FETCH_NUM)[0] == 1) {
-            http_response_code(500);
             return false;
         }
 

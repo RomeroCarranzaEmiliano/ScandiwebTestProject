@@ -151,7 +151,9 @@ export default {
             }
           })
           .catch((e) => {
-            console.log(e);
+            if (e.response.data.skuErr) {
+              this.skuErr = "Please submit a valid unique sku";
+            }
           })
     },
     valSku: function () {
